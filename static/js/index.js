@@ -98,14 +98,14 @@ async function enviarMensagem(){
 // Função para criar a bolha com estilo do usuario
 function criaBolhaUsuario(){
   let bolha = document.createElement("p");
-  bolha.classList.add("chat__bolha chat__bolha--usuario");
+  bolha.classList = "chat__bolha chat__bolha--usuario";
   return bolha;
 }
 
 // Função para criar a bolha com estilo do bot
 function criaBolhaBot(){
   let bolha = document.createElement("p");
-  bolha.classList.add("chat__bolha chat__bolha--bot");
+  bolha.classList = "chat__bolha chat__bolha--bot";
   return bolha;
 }
 

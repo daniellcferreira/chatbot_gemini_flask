@@ -17,8 +17,15 @@ CHAVE_API_GOOGLE = os.getenv("GEMINI_API_KEY")
 MODELO_ESCOLHIDO = "gemini-1.5-flash"
 genai.configure(api_key=CHAVE_API_GOOGLE)
 
+# define os caminhos absolutos para templates e static
+ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+TEMPLATES_PATH = os.path.join(ROOT_PATH, 'templates')
+STATIC_PATH = os.path.join(ROOT_PATH, 'static')
+
 # inicializa a aplicação Flask
-app = Flask(__name__)
+app = Flask(__name__, 
+            template_folder=TEMPLATES_PATH, 
+            static_folder=STATIC_PATH)
 app.secret_key = "teste"
 
 # carrega o contexto do e-commerce
